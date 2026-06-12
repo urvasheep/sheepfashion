@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&display=swap');
 
 :root{
-    --ivory:#F8F6F2;
-    --pearl:#EEEAE5;
-    --silver:#C9C5BE;
-    --charcoal:#222222;
-    --white:#ffffff;
+    ivory:#F8F6F2;
+    pearl:#EEEAE5;
+    silver:#C9C5BE;
+    charcoal:#222222;
+    white:#ffffff;
 }
 
 *{
