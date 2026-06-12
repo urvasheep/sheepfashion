@@ -167,10 +167,15 @@ nav a:hover::after {
     padding: 0 8% 120px;
 }
 
+/* Updated .product element to properly stylistic clickable links */
 .product {
+    display: block;
+    text-decoration: none;
+    color: inherit;
     background: var(--white);
     border-radius: 12px;
     overflow: hidden;
+    cursor: pointer;
     transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     box-shadow: 0 4px 20px rgba(0,0,0,0.02);
 }
@@ -179,19 +184,21 @@ nav a:hover::after {
     overflow: hidden;
     position: relative;
     height: 460px;
+    background: #fdfdfd;
 }
 
 .product img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
 }
 
 .product-info {
     padding: 25px;
     text-align: center;
     background: var(--white);
+    border-top: 1px solid rgba(210, 205, 196, 0.15);
 }
 
 .product h3 {
@@ -217,14 +224,21 @@ nav a:hover::after {
     letter-spacing: 1px;
 }
 
-/* Whimsical Interactive Hovers */
+/* Fairy-Coded Box Click & Focus Dynamic States */
 .product:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 20px 40px rgba(210, 205, 196, 0.3);
+    transform: translateY(-8px);
+    box-shadow: 0 25px 45px rgba(210, 205, 196, 0.4);
 }
 
 .product:hover img {
-    transform: scale(1.04);
+    transform: scale(1.03);
+    filter: brightness(1.02);
+}
+
+.product:active {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(210, 205, 196, 0.25);
+    transition: all 0.15s ease;
 }
 
 /* --- Our Story Section --- */
