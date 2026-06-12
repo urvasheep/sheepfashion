@@ -1,95 +1,218 @@
-/* Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&display=swap');
 
-body {
-	font-family: Arial, sans-serif;
-	margin: 0;
-	padding: 0;
+:root{
+    --ivory:#F8F6F2;
+    --pearl:#EEEAE5;
+    --silver:#C9C5BE;
+    --charcoal:#222222;
+    --white:#ffffff;
 }
 
-a {
-	text-decoration: none;
-	color: #333;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-ul {
-	list-style: none;
-	margin: 0;
-	padding: 0;
+body{
+    font-family:'Inter',sans-serif;
+    background:var(--ivory);
+    color:var(--charcoal);
+    line-height:1.7;
 }
 
-/* Header */
+/* HEADER */
 
-header {
-	background-color: #333;
-	color: #fff;
-	padding: 20px;
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:30px 8%;
+    background:rgba(248,246,242,0.95);
+    position:sticky;
+    top:0;
+    z-index:100;
 }
 
-nav ul {
-	display: flex;
-	justify-content: space-between;
+.logo{
+    font-family:'Playfair Display',serif;
+    font-size:2rem;
+    letter-spacing:6px;
 }
 
-nav li {
-	margin: 0 10px;
+nav ul{
+    display:flex;
+    gap:35px;
+    list-style:none;
 }
 
-nav a {
-	color: #fff;
-	font-weight: bold;
+nav a{
+    text-decoration:none;
+    color:var(--charcoal);
+    font-size:.95rem;
+    letter-spacing:1px;
+    transition:.3s;
 }
 
-/* Hero Section */
-
-.hero {
-	background-color: #f7f7f7;
-	padding: 50px;
-	text-align: center;
+nav a:hover{
+    opacity:.5;
 }
 
-.hero h2 {
-	font-size: 2.5em;
-	margin-bottom: 20px;
+/* HERO */
+
+.hero{
+    height:90vh;
+    background:
+    linear-gradient(rgba(255,255,255,.15),
+    rgba(255,255,255,.15)),
+    url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1600&q=80');
+
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
 }
 
-.hero p {
-	font-size: 1.2em;
-	margin-bottom: 20px;
+.hero-content{
+    max-width:700px;
+    padding:20px;
 }
 
-.button {
-	background-color: #333;
-	color: #fff;
-	padding: 10px 20px;
-	border-radius: 5px;
+.hero h1{
+    font-family:'Playfair Display',serif;
+    font-size:5rem;
+    font-weight:600;
+    letter-spacing:4px;
+    margin-bottom:20px;
+    color:white;
 }
 
-/* Products Section */
-
-.products {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	padding: 50px;
+.hero p{
+    font-size:1.1rem;
+    color:white;
+    margin-bottom:35px;
 }
 
-.product {
-	background-color: #f7f7f7;
-	width: calc(33.33% - 20px);
-	padding: 20px;
-	margin-bottom: 40px;
+.button{
+    display:inline-block;
+    padding:14px 36px;
+    border:1px solid white;
+    color:white;
+    text-decoration:none;
+    letter-spacing:2px;
+    transition:.4s;
 }
 
-.product img {
-	width: 100%;
-	margin-bottom: 20px;
+.button:hover{
+    background:white;
+    color:black;
 }
 
-.product h3 {
-	font-size: 1.5em;
-	margin-bottom: 10px;
+/* SECTION TITLES */
+
+.collection-title{
+    text-align:center;
+    padding:90px 0 40px;
 }
 
-.product p {
-	font-size: 1.2em;
-	margin-bottom: 20px;
+.collection-title h2{
+    font-family:'Playfair Display',serif;
+    font-size:2.5rem;
+    letter-spacing:4px;
+}
+
+/* PRODUCTS */
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:40px;
+    padding:0 8% 100px;
+}
+
+.product{
+    background:white;
+    overflow:hidden;
+    transition:.4s;
+}
+
+.product:hover{
+    transform:translateY(-10px);
+}
+
+.product img{
+    width:100%;
+    height:450px;
+    object-fit:cover;
+}
+
+.product h3{
+    font-family:'Playfair Display',serif;
+    padding:20px 20px 10px;
+    font-size:1.5rem;
+}
+
+.product p{
+    padding:0 20px;
+    color:#666;
+}
+
+.product span{
+    display:block;
+    padding:20px;
+    font-weight:600;
+    letter-spacing:1px;
+}
+
+/* ABOUT */
+
+.about{
+    text-align:center;
+    padding:120px 15%;
+    background:var(--pearl);
+}
+
+.about h2{
+    font-family:'Playfair Display',serif;
+    font-size:2.5rem;
+    margin-bottom:25px;
+    letter-spacing:3px;
+}
+
+.about p{
+    max-width:700px;
+    margin:auto;
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:40px;
+    background:white;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+    .hero h1{
+        font-size:3rem;
+    }
+
+    .products{
+        grid-template-columns:1fr;
+    }
+
+    header{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+}
