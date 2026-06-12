@@ -70,7 +70,7 @@ nav a:hover {
     /* Sets up your beautiful cherry blossom scene as the main banner */
     background-image:
     linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.15)),
-    url('view.jpg');
+    url('view.jpg'); /* Enforced strict lowercase .jpg */
 
     background-size: cover;
     background-position: center 35%; /* Nicely highlights the pink flowers */
