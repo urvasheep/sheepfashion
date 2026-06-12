@@ -9,7 +9,7 @@
     --fairy-glow: rgba(255, 255, 255, 0.8);
 }
 
-/* --- Global Reset & Framing --- */
+/* --- Global Layout & Formatting Core --- */
 * {
     margin: 0;
     padding: 0;
@@ -24,7 +24,7 @@ body {
     overflow-x: hidden;
 }
 
-/* --- Absolute Shield Against Blue/Underlined Links --- */
+/* Absolute Shield Rule: Crushes browser default blue links and lines globally */
 a, a:link, a:visited, a:hover, a:active {
     color: inherit !important;
     text-decoration: none !important;
@@ -83,14 +83,15 @@ nav a:hover::after {
     width: 100%;
 }
 
-/* --- Hero Section --- */
+/* --- Hero Banner Section --- */
 .hero {
     height: 85vh;
+    /* Uses your beautiful cherry blossom photo as the core background scene */
     background-image: 
         linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.15)), 
-        url('images/hero-bg.jpg'); /* Swap with your photo path if needed */
+        url('IMG_8850.jpg'); 
     background-size: cover;
-    background-position: center;
+    background-position: center 35%; /* Frames the blooming branches beautifully */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -110,6 +111,7 @@ nav a:hover::after {
     font-weight: 400;
     letter-spacing: 4px;
     margin-bottom: 20px;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
 }
 
 .hero p {
@@ -119,6 +121,7 @@ nav a:hover::after {
     line-height: 1.8;
     letter-spacing: 1px;
     margin-bottom: 35px;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.15);
 }
 
 .button {
@@ -140,7 +143,7 @@ nav a:hover::after {
     transform: translateY(-2px);
 }
 
-/* --- Responsive Product Grid Frame --- */
+/* --- Product Layout & Centering Grid --- */
 .collection-title {
     text-align: center;
     padding: 90px 0 40px;
@@ -163,8 +166,8 @@ nav a:hover::after {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 40px;
-    max-width: 1200px; /* Prevents the horizontal stretch on big displays */
-    margin: 0 auto;    /* Centers the entire layout nicely */
+    max-width: 1200px; /* Clamps width so it stays framed perfectly on big monitors */
+    margin: 0 auto;    /* Centers the product wall cleanly */
     padding: 0 4% 120px;
 }
 
@@ -181,7 +184,7 @@ nav a:hover::after {
 .product-img-container {
     overflow: hidden;
     position: relative;
-    height: 460px;
+    height: 480px; /* Gives your portrait photos breathing room */
 }
 
 .product img {
@@ -218,7 +221,7 @@ nav a:hover::after {
     letter-spacing: 1px;
 }
 
-/* Hovers & Active Press States */
+/* Hover Scale-up Interaction Mechanics */
 .product:hover {
     transform: translateY(-8px);
     box-shadow: 0 25px 45px rgba(210, 205, 196, 0.4);
@@ -268,7 +271,7 @@ footer {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* --- Fully Responsive Breakpoints --- */
+/* --- Responsive Adjustments --- */
 @media (max-width: 1024px) {
     .products {
         grid-template-columns: repeat(2, 1fr);
@@ -290,7 +293,7 @@ footer {
     }
     .products {
         grid-template-columns: 1fr;
-        max-width: 500px;
+        max-width: 440px; /* Keeps mobile styling look elegant and proportional */
         padding: 0 20px 80px;
     }
     .about {
